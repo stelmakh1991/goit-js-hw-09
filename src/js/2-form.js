@@ -4,8 +4,8 @@ const form = document.querySelector('.feedback-form');
 const textarea = document.querySelector('textarea');
 
 form.addEventListener('input', e => {
-    const userEmail = form.elements.email.value;
-    const userMessage = form.elements.message.value;
+    const userEmail = form.elements.email.value.trim();
+    const userMessage = form.elements.message.value.trim();
 
     const data = {
         email: userEmail,
@@ -17,12 +17,20 @@ form.addEventListener('input', e => {
 
 form.addEventListener('submit', e => {
     e.preventDefault();
+    
+    const userEmail = form.elements.email.value.trim();
+    const userMessage = form.elements.message.value.trim();
 
-    const data = loadFromLS(STORAGE_KEY) || {};
-    console.log(data);
+    if (userEmail === '' || userMessage === '') {
+        return alert('Please fill all fields with correct information!');
+    } 
+    else {
+        const data = loadFromLS(STORAGE_KEY) || {};
+        console.log(data);
 
-    localStorage.removeItem(STORAGE_KEY);
-    form.reset();
+        localStorage.removeItem(STORAGE_KEY);
+        form.reset(); 
+    }
 });
 
 function saveToLS(key = 'empty', value = '') {
