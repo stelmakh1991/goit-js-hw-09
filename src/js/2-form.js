@@ -22,7 +22,7 @@ form.addEventListener('submit', e => {
     const userMessage = form.elements.message.value.trim();
 
     if (userEmail === '' || userMessage === '') {
-        return alert('Please fill all fields with correct information!');
+        return alert('Please fill all fields with valid data!');
     } 
     else {
         const data = loadFromLS(STORAGE_KEY) || {};

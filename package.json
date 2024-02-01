@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=/goit-js-hw-09/",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "push": "git add .; git commit -m 'update'; git push"
   },
   "devDependencies": {
     "glob": "^8.1.0",
