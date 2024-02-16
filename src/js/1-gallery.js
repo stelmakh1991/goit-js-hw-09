@@ -91,7 +91,7 @@ function createGalleryMarkup() {
 
 createGalleryMarkup();
 // Creation of modal window
-var lightbox = new SimpleLightbox('.gallery a', {
+const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
     captionDelay: 250,
     close: false,
